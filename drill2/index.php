@@ -1,5 +1,5 @@
 <?php
 
-  include "controller/controls.php";
+  require "controller/controls.php";
 
 ?>
