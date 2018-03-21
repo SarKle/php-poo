@@ -3,7 +3,7 @@
 //*CREATION DE LA CLASSE HTML
 class Html{
 
-//*FONCTIONS
+//*METHODES
   public function Doctype($doctype){
     echo'<!DOCTYPE html>';
     echo'<html lang="en">';
@@ -19,7 +19,7 @@ class Html{
     echo $doctype->doctype();
             
   $style=new Html();
-    echo $style->css('style.css');
+    echo $style->css('view/style.css');
        
 
 //* CREATION CLASS META
@@ -50,11 +50,11 @@ class Image{
 class Link{
 
   public function Lien($link){
-    echo '<a href="http://resume.github.io/?sarahklewiec" target="_blank"> My resume </a>';
+    echo '<br> <a class="lien" href="http://resume.github.io/?sarahklewiec" target="_blank"> My resume </a>';
   }
 }
       $link=new Link();
-        echo $link->lien; 
+        echo $link->lien(); 
 
 //* CREATION DE LA CLASS JAVA
 class Java{
