@@ -38,7 +38,7 @@ Class Meta{
 //* CREATION DE LA CLASSE IMAGES
 class Image{
 
-  public function img($image){
+  public function Img($image){
     echo '<img src="image.jpeg">';
   }
 }    
@@ -49,21 +49,20 @@ class Image{
 //* CREATION DE LA CLASSE LINK
 class Link{
 
-  public function lien($link){
-    echo '<a href="http://resume.github.io/?sarahklewiec" target="_blank">My resume</a>'
+  public function Lien($link){
+    echo '<a href="http://resume.github.io/?sarahklewiec" target="_blank"> My resume </a>';
   }
-      $link=new Link();
-        echo $link->lien 
 }
+      $link=new Link();
+        echo $link->lien; 
 
 //* CREATION DE LA CLASS JAVA
 class Java{
   
-  public function js($javascript){
+  public function Javas($javascript){
     echo '<script> Javascript </script>';
-
-      $javascript = new Java();
-        echo $javascript->java();  
   }
 }
+      $javascript = new Java();
+        echo $javascript->javas(); 
 ?>
