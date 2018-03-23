@@ -17,6 +17,9 @@ $form = new Form($_POST);
 
   <form action='index.php' method="post">
     Nom: <?php echo $form->input ("nom",$nom);?>
+      <?php $valid = new Validator();
+        echo $valid->Valider(); ?> <br>
+
     Prénom: <?php echo $form->input ("prenom",$prenom);?>
       <?php echo $form->submit( );?>
   </form>

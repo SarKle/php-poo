@@ -8,7 +8,7 @@ class Html{
     echo'<!DOCTYPE html>';
     echo'<html lang="en">';
   }
-        
+
   public function Css($style){
     echo '<head>';
     echo '<link rel="stylesheet "href="'.$style.'">';
@@ -17,10 +17,10 @@ class Html{
 }
   $doctype=new Html();
     echo $doctype->doctype();
-            
+
   $style=new Html();
     echo $style->css('view/style.css');
-       
+
 
 //* CREATION CLASS META
 Class Meta{
@@ -29,8 +29,8 @@ Class Meta{
     echo '<meta charset="UTF-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     echo '<meta http-equiv="X-UA-Compatible" content="ie=edge">';
-  } 
-}  
+  }
+}
       $meta=new Meta();
         echo $meta->meta();
 
@@ -41,7 +41,7 @@ class Image{
   public function Img($image){
     echo '<img src="image.jpeg">';
   }
-}    
+}
       $image=new Image();
         echo $image->img();
 
@@ -54,15 +54,15 @@ class Link{
   }
 }
       $link=new Link();
-        echo $link->lien(); 
+        echo $link->lien();
 
 //* CREATION DE LA CLASS JAVA
 class Java{
-  
+
   public function Javas($javascript){
     echo '<script> Javascript </script>';
   }
 }
       $javascript = new Java();
-        echo $javascript->javas(); 
+        echo $javascript->javas();
 ?>
