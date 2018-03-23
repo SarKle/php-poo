@@ -25,71 +25,84 @@ class Voiture{
     }
 //Voiture free or reserved
     public function Dispo(){
-      if($this->$marque=="Audi"){   //si l'objet est audi...
-        echo "RESERVED";
+      if($this->marque=="Audi"){   //si l'objet est audi...
+        echo '<p>'."RESERVED".'</p>';
       }
       else{
-        echo "FREE";
+        echo '<p>'."FREE".'</p>';
       }
     }
 
     public function Type(){
-      if($this->$poids>3500){    //si le poids dépasse 3500kg
-        echo "UTILITAIRE";
+      if($this->poids>3500){    //si le poids dépasse 3500kg
+        echo '<p>'."UTILITAIRE".'</p>';
       }
       else{
-        echo "COMMERCIALE";
+        echo '<p>'."COMMERCIALE".'</p>';
       }
     }
 
     public function Pays(){
-      if(stristr($this->$immatriculation,"BE")==True){
-        echo "BELGIQUE";
+      if(stristr($this->immatriculation,"BE")==True){
+        echo '<p>'."BELGIQUE".'</p>';
       }
-      elseif(stristr($this->$immatriculation,"FR"==True)){
-        echo "FRANCE";
+      elseif(stristr($this->immatriculation,"FR"==True)){
+        echo '<p>'."FRANCE".'</p>';
       }
-      elseif(stristr($this->$immatriculation,"DE"==True)){
-        echo "ALLEMAGNE";
+      elseif(stristr($this->immatriculation,"DE"==True)){
+        echo '<p>'."ALLEMAGNE".'</p>';
       }
       else{
-        echo "FROM SOMEWHERE OVER THE RAINBOW";
+        echo '<p>'."FROM SOMEWHERE OVER THE RAINBOW".'</p>';
       }
     }
 
     public function Ride(){
-      return $this->kilometrage+=100000;
+      echo $this->kilometrage+=100000;
     }
 
     public function Usure(){
       if($this->kilometrage<100000){
-        echo "LOW";
+        echo '<p>'."LOW".'</p>';
       }
       elseif($this->kilometrage>100000){
-        echo "MIDDLE";
+        echo '<p>'."MIDDLE".'</p>';
       }
       elseif($this->kilometrage>200000){
-        echo "HIGH";
+        echo '<p>'."HIGH".'</p>';
       }
     }
 
     public function Age(){
       $datejour=date("Y");
-      $ageauto=$annee-$this->dateCirculation;
+      $ageauto=$datejour-$this->dateCirculation;
         echo $ageauto;
     }
 
     public function Img($image){
-      echo '<img src="audi.jpg">';
+      echo '<img src="'.$image.'" alt="'.Photo.' '.$this->marque.'">';
     }
 }
+// ($marque,$modele,$couleur,$immatriculation,$dateCirculation,$kilometrage,$poids,$image
+$test= new Voiture('Audi','R8','Bleu','BE-JXH-591','2016','15000','1499');
 
-$test= new Voiture('Audi','R8','Red',1499,'BE-JXH-591',1200,2017);
-$test->Img();
-// $test->Usure();
+// foreach ($test as $key=>$value){
+// echo $value;
+// }
+
+$test->Img('audi.jpg');
   echo '<pre>';
   print_r ($test);
-  echo '</pre>'
+  echo '</pre>';
+$test->Dispo();
+$test->Pays();
+$test->Usure();
+$test->Ride();
+$test->Type();
+$test->Age();
+
+
+
 
 
 ?>
