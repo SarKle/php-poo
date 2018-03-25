@@ -1,5 +1,6 @@
 <?php
 
+
 class Voiture{
 
   private $marque;
@@ -11,7 +12,7 @@ class Voiture{
   public $poids;
   public $image;
 
-    public function __construct($marque,$modele,$couleur,$immatriculation,$dateCirculation,$kilometrage,$poids,$image){
+    public function __construct($marque,$modele,$couleur,$immatriculation,$dateCirculation,$kilometrage,$poids){
       $this->marque=$marque;
       $this->modele=$modele;
       $this->couleur=$couleur;
@@ -20,9 +21,24 @@ class Voiture{
       $this->kilometrage=$kilometrage;
       $this->poids=$poids;
       $this->image=$image;
+    }      //return "Hello";
 
-      //return "Hello";
+    public function Marque(){
+      return $this->marque;
     }
+    public function Modele(){
+      return $this->modele;
+    }
+    public function Couleur(){
+      return $this->couleur;
+    }
+    public function Imma(){
+      return $this->immatriculation;
+    }
+    public function DateImma(){
+      return $this->DateImma;
+    }
+
 //Voiture free or reserved
     public function Dispo(){
       if($this->marque=="Audi"){   //si l'objet est audi...
@@ -46,10 +62,10 @@ class Voiture{
       if(stristr($this->immatriculation,"BE")==True){
         echo '<p>'."BELGIQUE".'</p>';
       }
-      elseif(stristr($this->immatriculation,"FR"==True)){
+      elseif(stristr($this->immatriculation,"FR")==True){
         echo '<p>'."FRANCE".'</p>';
       }
-      elseif(stristr($this->immatriculation,"DE"==True)){
+      elseif(stristr($this->immatriculation,"DE")==True){
         echo '<p>'."ALLEMAGNE".'</p>';
       }
       else{
@@ -58,7 +74,7 @@ class Voiture{
     }
 
     public function Ride(){
-      echo $this->kilometrage+=100000;
+      echo $this->kilometrage+=100000;echo"km";
     }
 
     public function Usure(){
@@ -76,33 +92,45 @@ class Voiture{
     public function Age(){
       $datejour=date("Y");
       $ageauto=$datejour-$this->dateCirculation;
-        echo $ageauto;
+        echo '<p>'.$ageauto.ans.'</p>';
     }
 
     public function Img($image){
       echo '<img src="'.$image.'" alt="'.Photo.' '.$this->marque.'">';
     }
+
+
 }
-// ($marque,$modele,$couleur,$immatriculation,$dateCirculation,$kilometrage,$poids,$image
-$test= new Voiture('Audi','R8','Bleu','BE-JXH-591','2016','15000','1499');
-
-// foreach ($test as $key=>$value){
-// echo $value;
-// }
-
-$test->Img('audi.jpg');
-  echo '<pre>';
-  print_r ($test);
-  echo '</pre>';
-$test->Dispo();
-$test->Pays();
-$test->Usure();
-$test->Ride();
-$test->Type();
-$test->Age();
 
 
 
 
+class Form{
+
+  public $data;
+  public $surround='<p>';
+  //
+  // public function __construct($data=array()){
+  //   $this->data=$data;
+  // }
+
+  private function surround($html){
+    return "<{$this->surround}>{$html}</{$this->surround}>";
+  }
+
+  public function select(){
+    foreach ($voiture as $modele=>$value){
+      echo '<select name="liste">
+            <option value="'.$key.'">'.$value.'</option>
+            </select>;
+             '
+            ;
+  }
+
+
+      // foreach($this as $key=>$value){
+      //   echo $value;
+      // }
+}
 
 ?>

@@ -1,7 +1,8 @@
 <?php
 
-require "functions.php";
-include 'voitures.php';
+require "controller/functions.php";
+require "controller/voitures.php";
+// require "controller/form.php";
 
 
 ?>
@@ -16,29 +17,15 @@ include 'voitures.php';
 </head>
 <body>
 
-<!-- <h1> PARC AUTOMOBILE </h1> -->
+<h1> PARC AUTOMOBILE </h1>
 
-
-
-
-
-<!-- $marque = 'Audi';
-$model='R8';
-$couleur='red';
-$poids = 1499;
-$immatriculation = "BE-JXH-591";
-$kilometrage = 1200;
-$dateCirculation = 2017;
-
-$voiture1 = new Voiture($marque, $modele, $couleur, $poids, $immatriculation, $kilometrage, $dateCirculation);
-  echo $voiture1->dispo();
-  echo $voiture1->type();
-  echo $voiture1->pays();
-  echo $voiture1->usure();
-  echo $voiture1->age();
-  echo $voiture1->ride();
- -->
-
-
+  <form action="index.php" method="post">
+    Choisissez une voiture:
+      <?php
+      $form=new Form();
+        echo $form->select();
+        echo $form->submit();
+      ?>
+  </form>
 </body>
 </html>
