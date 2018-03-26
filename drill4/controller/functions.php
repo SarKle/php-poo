@@ -119,12 +119,16 @@ class Form{
   }
 
   public function select(){
-    foreach ($voiture as $modele=>$value){
-      echo '<select name="liste">
-            <option value="'.$key.'">'.$value.'</option>
-            </select>;
-             '
-            ;
+    foreach ($voiture->$marque[" "] as $key=>$value){
+      echo '<select name="liste">';
+      echo '<option value="'.$value.'">';
+      echo '</select>';
+
+    }
+  }
+
+  public function submit(){
+    return $this->surround('<button type="submit"> Search </button>');
   }
 
 

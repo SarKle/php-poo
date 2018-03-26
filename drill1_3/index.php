@@ -1,6 +1,7 @@
 <?php
 
 require "controller/controls.php";
+require "controller/validator.php";
 
 $form = new Form($_POST);
 ?>
@@ -16,13 +17,17 @@ $form = new Form($_POST);
 <body>
 
   <form action='index.php' method="post">
+    <?php $valid = new Validator();?>
+
     Nom: <?php echo $form->input ("nom",$nom);?>
-      <?php $valid = new Validator();
         echo $valid->Valider(); ?> <br>
 
     Prénom: <?php echo $form->input ("prenom",$prenom);?>
       <?php echo $form->submit( );?>
   </form>
+
+  <?php if(isset($_POST["nom"])AND isset($_POST['prenom'])){
+    echo '<p>'.'Hello '.$_POST['nom'] .$_POST['prenom'].'</p>'; }?>
 
 </body>
 </html>
